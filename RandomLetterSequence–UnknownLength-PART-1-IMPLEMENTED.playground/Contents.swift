@@ -100,4 +100,52 @@ for (letter, probability) in letterProbabilities {
 }
 
 
+// Build Output String
+var outputString: String = ""
+for i in 1...30{
+    
+    //generate random value
+    let newRandomValue = arc4random_uniform(1000)
+    
+    let newRandomValueFloat = Float(newRandomValue) / 10
+    
+    
+    //Loop through probabilities in dictionary
+    //add probabilities to determine "upperValue"
+    //check when lower value is less than upper value of a specific interval
+    
+    var upperValue: Float = 0.0
+    for (letter, probability) in letterProbabilities {
+        
+        
+        //determine the new upper value
+        upperValue += probability
+        
+        //check lower boundary
+        if (newRandomValueFloat < upperValue) {
+            
+            outputString += String(letter)
+            
+            //stop loop
+            break
+        
+    }
+    
+}
+
+}
+
+//dislay output
+outputString
+
+
+outputString.characters.count
+
+
+
+
+
+
+
+
 
