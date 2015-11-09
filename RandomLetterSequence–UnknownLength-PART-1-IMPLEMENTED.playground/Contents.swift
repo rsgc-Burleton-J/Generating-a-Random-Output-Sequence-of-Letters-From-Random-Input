@@ -44,26 +44,26 @@ Here is the implementation:
 */
 
 // create empty list of probabilities (dictionary)
-var letterCounts = [Character: Int]()
+var wordCounts = [Character: Int]()
 
 // loop over the input string
-for letter in input.characters {
+for word in input.characters {
     
     // inspect each character
-    letter
+    word
     // build the dictionary (list) of letter counts
-    if letterCounts[letter] == nil {
-        letterCounts[letter] = 1        // first time for this letter!
+    if wordCounts[word] == nil {
+        wordCounts[word] = 1        // first time for this letter!
     } else {
         // we KNOW this letter is in the dictionary. WE KNOW IT
         // ... so just add 1 to the current count
-        letterCounts[letter]! = letterCounts[letter]! + 1
+        wordCounts[word]! = wordCounts[word]! + 1
     }
     
 }
 
 // This is the dictionary we have built – it actually shows letter COUNTS, not probabilities – YET.
-letterCounts
+wordCounts
 
 /*:
 
@@ -76,15 +76,15 @@ Here is the implementation:
 
 */
 //Get length of input string
-input.characters.count
+word.count
 
 //Create and empty dictionary to store probabilities
-var letterProbabilities = [Character: Float]()
+var wordProbabilities = [String: Float]()
 
 //Loop over list of letter counts
-for (letter, count) in letterCounts {
+for (word, count) in wordCounts {
     // Add and entry to the probabilites dictionary
-    letterProbabilities[letter] = Float(count) / Float(input.characters.count) * 100
+    wordProbabilities[word] = Float(count) / Float(word.count) * 100
     
 }
 
